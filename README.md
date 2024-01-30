@@ -20,7 +20,6 @@ This script is a Bash script designed to search for files with a specific extens
    ```bash
    sudo cp fileSearcher /usr/bin
    ```
-   This allows us to use the command from any directory.
 
 3. **Set Execution Permissions:**
 
@@ -35,13 +34,9 @@ Once installed, the `fileSearcher` command can be used to search for files with 
 
 Example usage:
 ```bash
-fileSearcher -t pdf -n search_string -d /path/to/directory
+fileSearcher -t pdf -n "modules" -d ./Desktop/books
 ```
 
 - `-t`: Specify the file extension.
 - `-n`: Specify the string to search for.
 - `-d`: Specify the directory to search in.
-
-### Note
-
-Make sure to replace `search_string` with the actual string you want to search for, and `/path/to/directory` with the directory where you want to search for files.
