@@ -24,4 +24,18 @@ while [ $# -gt 0 ]; do
     shift 2;
 done
 
-find "$directory" -type f -name "*.$extension" -exec grep -q "$search_string" {} \; -exec echo {} \;
+if [ "$extension" = "pdf" ]; then
+    for file in "$directory"/*.pdf; do
+        if [ -f "$file" ]; then
+            # Use pdftotext to convert the PDF to text and grep to search for the word
+            result=$(pdftotext "$file" - | grep -qi "$search_string" && echo "$file")
+            # Check if result is not empty
+            if [ -n "$result" ]; then
+                echo "$result"
+            fi
+        fi
+    done
+else
+    find "$directory" -type f -name "*.$extension" -exec grep -q "$search_string" {} \; -exec echo {} \;
+fi
+
