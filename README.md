@@ -1,5 +1,5 @@
 # search for a specific string within files
-This script is a Bash script designed to search for files with a specific extension in a given directory and then search for a specific string within those files.
+This script is a Bash script designed to search for a specific string within files in a given directory
 
 ## Installation
 
